@@ -23,7 +23,7 @@
   </head>
   <body>
     
-<nav class="navbar navbar-expand fixed-top"> 
+<nav class="navbar navbar-expand  navbar-default fixed-top"> 
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="img/4.jpg" alt="ScrollPlace"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <img src="img/imac.jpg">
+          <img id="main" src="img/imac.jpg">
         </div>
       </div>
     </div>
@@ -142,6 +142,23 @@
 
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('#main').addClass('animate');
+        $(window).scroll(function(){
+          var Y= $(this).scrollTop();
+          if(Y >= 200){
+            $('#tablet').addClass('animate');
+            $('#mobile').addClass('animate');
+          }
+          if(Y < 200){
+            $('#tablet').removeClass('animate');
+            $('#mobile').removeClass('animate');
+          }
+        });
+      });
+    </script>
       
   </body>
 </html>
